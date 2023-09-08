@@ -1,0 +1,119 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        <p>
+            Catch an idea 💡! Iterate over the lowered text and increment predefined counter variable each time when a character is vowel.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, what should I start from?
+    </div>
+    <div class="answer">
+        <p>
+            Declare a variable <b class="code">count</b> with initial value 0, which you are going to return at the end.
+        </p>
+        <pre class="brush: javascript">
+let count = 0;
+...
+return count;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What to do next?
+    </div>
+    <div class="answer">
+        <p>
+            Make the given <b class="code">text</b> lowercase with <a target="_blank" href="https://www.w3schools.com/jsref/jsref_tolowercase.asp">string.toLowerCase()</a> method...
+        </p>
+        <pre class="brush: javascript">
+text.toLowerCase()
+        </pre>
+        <p>
+            ..and iterate over it using <a target="_blank" href="https://www.w3schools.com/js/js_loop_for.asp">for</a> loop.
+        </p>
+        <pre class="brush: javascript">
+for(let char of text.toLowerCase()) {
+    ...
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I still need a hint.
+    </div>
+    <div class="answer">
+        <p>
+            Check if <b class="code">char</b> is vowel with <a target="_blank" href="https://www.w3schools.com/jsref/jsref_includes.asp">string.includes()</a> method.
+        </p>
+        <pre class="brush: javascript">
+"aeiou".includes(char)
+        </pre>
+        <p>
+            The expression returns logic value, so you need to convert it into integer with <b class="code">Number()</b> function. Then increment the counter <b class="code">count</b> by this value.
+        </p>
+        <pre class="brush: javascript">
+count += Number("aeiou".includes(char));
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        <p>
+            You just need to join all previous hints and wrap your code into function expression. Using type hints for input and output data are highly recommended.
+        </p>
+        <p>Here is the whole solution:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function countVowels(text: string): number {
+
+    let count = 0;
+    for(let char of text.toLowerCase()) {
+        count += Number("aeiou".includes(char));
+    }
+    return count;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Javascript Hero!
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            Replace all consonant characters with empty space and calculate the length of the remaining string.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function countVowels(text: string): number {
+    
+    return text.replace(/[^aeiou]/gi, '').length;
+}
+        </pre>
+        </div>
+        <p>Click <b>Best Solutions</b> at mission menu and see a lot of other interesting solutions!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it 👍!
+    </div>
+</div>
+</body>
