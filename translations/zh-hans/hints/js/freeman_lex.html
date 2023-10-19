@@ -1,0 +1,119 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        我不知道如何开始解决这个任务。
+    </div>
+    <div class="answer">
+        <p>
+            给你个主意💡！迭代降低的文本，并在每次出现元音字符时递增预定义的计数变量。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        好吧，我应该从什么开始呢？
+    </div>
+    <div class="answer">
+        <p>
+            声明一个初始值为 0 的变量<b class="code">count</b> ，最后返回它。
+        </p>
+        <pre class="brush: javascript">
+let count = 0;
+...
+return count;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        接下来要做什么？
+    </div>
+    <div class="answer">
+        <p>
+            使用<a target="_blank" href="https://www.w3schools.com/jsref/jsref_tolowercase.asp">string.toLowerCase()</a> 方法将给定的<b class="code">text</b> 变为小写...
+        </p>
+        <pre class="brush: javascript">
+text.toLowerCase()
+        </pre>
+        <p>
+            ...并使用<a target="_blank" href="https://www.w3schools.com/js/js_loop_for.asp">for</a> 循环遍历它。
+        </p>
+        <pre class="brush: javascript">
+for(let char of text.toLowerCase()) {
+    ...
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        我还需要提示。
+    </div>
+    <div class="answer">
+        <p>
+            使用<a target="_blank" href="https://www.w3schools.com/jsref/jsref_includes.asp">string.includes()</a> 方法检查<b class="code">char</b> 是否为元音。
+        </p>
+        <pre class="brush: javascript">
+"aeiou".includes(char)
+        </pre>
+        <p>
+            表达式返回逻辑值，因此需要使用<b class="code">Number()</b> 函数将其转换为整数。然后用这个值递增计数器<b class="code">count</b> 。
+        </p>
+        <pre class="brush: javascript">
+count += Number("aeiou".includes(char));
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        那么，我的最终解决方案应该是怎样的呢？
+    </div>
+    <div class="answer">
+        <p>
+            您只需将之前所有的提示连接起来，然后将代码封装成函数表达式即可。强烈建议对输入和输出数据使用类型提示。
+        </p>
+        <p>以下是整个解决方案：</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function countVowels(text: string): number {
+
+    let count = 0;
+    for(let char of text.toLowerCase()) {
+        count += Number("aeiou".includes(char));
+    }
+    return count;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        向我展示更多解决方案！<br />
+        因为我想成为真正的 🥇 Javascript 英雄！
+    </div>
+    <div class="answer">
+        <p>当然，抓紧时间！</p>
+        <p>
+            用空格替换所有辅音字符，然后计算剩余字符串的长度。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function countVowels(text: string): number {
+    
+    return text.replace(/[^aeiou]/gi, '').length;
+}
+        </pre>
+        </div>
+        <p>点击任务菜单<b>Best Solutions</b> ，查看更多有趣的解决方案！</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        谢谢！我现在知道并理解得更多了！一切正常！
+    </div>
+    <div class="answer">
+        很高兴听到这个消息 👍！
+    </div>
+</div>
+</body>
