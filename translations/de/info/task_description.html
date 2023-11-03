@@ -1,0 +1,46 @@
+<!-- Describe task in general -->
+
+<p>
+    Diese Funktion sollte eine Zeichenkette als Eingabe nehmen und die Anzahl der Vokale (a, e, i, o, u) in der Zeichenkette zurückgeben. Die Funktion sollte Groß- und Kleinschreibung nicht berücksichtigen.
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}count-vowels.png" alt="example" style="max-height: 200px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Eingabe:</strong> Zeichenkette <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Integer <span>({% if is_js %}number{% else %}int{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>Beispiele:</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+
+    <strong>Wie es verwendet wird:</strong>
+    <ul>
+        <li><i>bei der Verarbeitung natürlicher Sprache, z. B. bei der Textanalyse und in Statistiken;</i></li>
+        <li><i>in textbasierten Spielen oder Lernanwendungen, z.B. um den Schwierigkeitsgrad eines Wortes oder Satzes zu berechnen.</i></li>
+    </ul>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Voraussetzungen:</strong>
+    <ul>
+    <li><i>text ∈ string;</i></li>
+    <li><i>length(text) &gt;= 0.</i></li>
+    </ul>
+</p>

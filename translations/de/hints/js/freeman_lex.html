@@ -1,0 +1,119 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+    </div>
+    <div class="answer">
+        <p>
+            Haben Sie eine Idee 💡! Iterieren Sie über den abgesenkten Text und erhöhen Sie jedes Mal die vordefinierte Zählervariable, wenn ein Zeichen ein Vokal ist.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, womit soll ich anfangen?
+    </div>
+    <div class="answer">
+        <p>
+            Deklarieren Sie eine Variable <b class="code">count</b> mit dem Anfangswert 0, die Sie am Ende zurückgeben werden.
+        </p>
+        <pre class="brush: javascript">
+let count = 0;
+...
+return count;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was ist als nächstes zu tun?
+    </div>
+    <div class="answer">
+        <p>
+            Machen Sie die angegebene <b class="code">text</b> mit der Methode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_tolowercase.asp">string.toLowerCase()</a> zu einem Kleinbuchstaben...
+        </p>
+        <pre class="brush: javascript">
+text.toLowerCase()
+        </pre>
+        <p>
+            ...und iterieren Sie darüber mit <a target="_blank" href="https://www.w3schools.com/js/js_loop_for.asp">for</a> loop.
+        </p>
+        <pre class="brush: javascript">
+for(let char of text.toLowerCase()) {
+    ...
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ich brauche noch einen Hinweis.
+    </div>
+    <div class="answer">
+        <p>
+            Prüfen Sie, ob <b class="code">char</b> ein Vokal ist mit der Methode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_includes.asp">string.includes()</a>.
+        </p>
+        <pre class="brush: javascript">
+"aeiou".includes(char)
+        </pre>
+        <p>
+            Der Ausdruck gibt einen logischen Wert zurück, also müssen Sie ihn mit der Funktion <b class="code">Number()</b> in eine Ganzzahl umwandeln. Erhöhen Sie dann den Zähler <b class="code">count</b> um diesen Wert.
+        </p>
+        <pre class="brush: javascript">
+count += Number("aeiou".includes(char));
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Wie sollte also meine endgültige Lösung aussehen?
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen nur alle vorherigen Hinweise zusammenführen und Ihren Code in einen Funktionsausdruck verpacken. Die Verwendung von Typ-Hinweisen für Eingabe- und Ausgabedaten wird dringend empfohlen.
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function countVowels(text: string): number {
+
+    let count = 0;
+    for(let char of text.toLowerCase()) {
+        count += Number("aeiou".includes(char));
+    }
+    return count;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Zeigen Sie mir mehr Lösungen!<br />
+        denn ich möchte ein echter 🥇 Javascript-Held sein!
+    </div>
+    <div class="answer">
+        <p>Klar, schnappen Sie es sich!</p>
+        <p>
+            Ersetzen Sie alle konsonantischen Zeichen durch Leerzeichen und berechnen Sie die Länge der verbleibenden Zeichenfolge.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function countVowels(text: string): number {
+    
+    return text.replace(/[^aeiou]/gi, '').length;
+}
+        </pre>
+        </div>
+        <p>Klicken Sie im Missionsmenü auf <b>Best Solutions</b> und sehen Sie sich viele weitere interessante Lösungen an!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Vielen Dank! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+    </div>
+    <div class="answer">
+        Freut mich zu hören 👍!
+    </div>
+</div>
+</body>
