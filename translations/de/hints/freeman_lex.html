@@ -1,0 +1,116 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+    </div>
+    <div class="answer">
+        <p>
+            Haben Sie eine Idee 💡! Iterieren Sie über den abgesenkten Text und erhöhen Sie jedes Mal die vordefinierte Zählervariable, wenn ein Zeichen ein Vokal ist.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, womit soll ich anfangen?
+    </div>
+    <div class="answer">
+        <p>
+            Deklarieren Sie eine Variable <b class="code">count</b> mit dem Anfangswert 0, die Sie am Ende zurückgeben werden.
+        </p>
+        <pre class="brush: python">
+count = 0
+...
+return count
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was ist als nächstes zu tun?
+    </div>
+    <div class="answer">
+        <p>
+            Machen Sie die angegebene <b class="code">text</b> mit der Methode <a target="_blank" href="https://www.w3schools.com/python/ref_string_lower.asp">str.lower()</a> zu einem Kleinbuchstaben...
+        </p>
+        <pre class="brush: python">
+text.lower()
+        </pre>
+        <p>
+            ...und iterieren Sie darüber mit <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a> loop.
+        </p>
+        <pre class="brush: python">
+for char in text.lower():
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ich brauche noch einen Hinweis.
+    </div>
+    <div class="answer">
+        <p>
+            Prüfen Sie, ob <b class="code">char</b> ein Vokal ist mit dem <b class="code">in</b> Operator.
+        </p>
+        <pre class="brush: python">
+char in "aeiou"
+        </pre>
+        <p>
+            Der Ausdruck gibt einen logischen Wert zurück, aber Python kann ihn als Ganzzahl (0 oder 1) interpretieren. Erhöhen Sie also den Zähler <b class="code">count</b> um diesen Wert.
+        </p>
+        <pre class="brush: python">
+count += char in "aeiou"
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Wie sollte also meine endgültige Lösung aussehen?
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen nur alle vorherigen Hinweise zusammenführen und Ihren Code in einen Funktionsausdruck verpacken. Die Verwendung von Typ-Hinweisen für Eingabe- und Ausgabedaten wird dringend empfohlen.
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def count_vowels(text: str) -> int:
+
+    count = 0
+    for char in text.lower():
+        count += char in "aeiou"
+        
+    return count
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Zeigen Sie mir mehr Lösungen!<br />
+        denn ich will ein echter 🥇 Python Ninnjaa sein!
+    </div>
+    <div class="answer">
+        <p>Klar, schnapp sie dir!</p>
+        <p>
+            Dieselben Operationen, aber mit Generatorausdruck.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def count_vowels(text: str) -> int:
+
+    return sum(char in "aeiou" for char in text.lower())
+        </pre>
+        </div>
+        <p>Klicken Sie im Missionsmenü auf <b>Best Solutions</b> und sehen Sie sich viele andere interessante Lösungen an!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Vielen Dank! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+    </div>
+    <div class="answer">
+        Freut mich zu hören 👍!
+    </div>
+</div>
+</body>
