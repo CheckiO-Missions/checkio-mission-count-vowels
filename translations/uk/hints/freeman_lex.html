@@ -39,8 +39,10 @@ text.lower()
             ..і перебирайте його з допомогою циклу <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a>.
         </p>
         <pre class="brush: python">
+count = 0
 for char in text.lower():
     ...
+return count
         </pre>
     </div>
 </div>
@@ -50,16 +52,20 @@ for char in text.lower():
     </div>
     <div class="answer">
         <p>
-            Перевірте, чи <b class="code">char</b> є голосним з оператором <b class="code">in</b>.
+            Ви можете перевірити, чи є <b class="code">char</b> голосним за допомогою оператора <b class="code">in</b>.
         </p>
         <pre class="brush: python">
 char in "aeiou"
         </pre>
         <p>
-            Вираз повертає логічне значення, але Python може інтерпретувати його як ціле (0 або 1). Тому збільште лічильник <b class="code">count</b> на це значення.
+            Вираз повертає логічне значення, але Python може інтерпретувати його як ціле (False == 0 або True == 1). Тому збільшуйте лічильник <b class="code">count</b> на це значення всередині циклу.
         </p>
         <pre class="brush: python">
-count += char in "aeiou"
+count = 0
+for char in text.lower():
+    count += char in "aeiou"
+            
+return count
         </pre>
     </div>
 </div>
@@ -69,7 +75,7 @@ count += char in "aeiou"
     </div>
     <div class="answer">
         <p>
-            Вам просто потрібно об'єднати всі попередні підказки і обернути ваш код у вираз функції. Наполегливо рекомендуємо використовувати підказки типів для вхідних та вихідних даних.
+            Вам просто потрібно обернути ваш код у вираз функції. Наполегливо рекомендується використовувати підказки типів для вхідних і вихідних даних.
         </p>
         <p>Ось і все рішення:</p>
         <div class="spoiler">
