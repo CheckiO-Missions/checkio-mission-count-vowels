@@ -39,8 +39,10 @@ text.lower()
             ... et itérer sur lui en utilisant la boucle <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a>.
         </p>
         <pre class="brush: python">
+count = 0
 for char in text.lower():
     ...
+return count
         </pre>
     </div>
 </div>
@@ -50,16 +52,20 @@ for char in text.lower():
     </div>
     <div class="answer">
         <p>
-            Vérifiez si <b class="code">char</b> est une voyelle avec l'opérateur <b class="code">in</b>.
+            Vous pouvez vérifier si <b class="code">char</b> est une voyelle avec l'opérateur <b class="code">in</b>.
         </p>
         <pre class="brush: python">
 char in "aeiou"
         </pre>
         <p>
-            L'expression renvoie une valeur logique, mais Python peut l'interpréter comme un entier (0 ou 1). Incrémentez donc le compteur <b class="code">count</b> de cette valeur.
+            L'expression renvoie une valeur logique, mais Python peut l'interpréter comme un entier (False == 0 ou True == 1). Incrémentez donc le compteur <b class="code">count</b> de cette valeur à l'intérieur de la boucle.
         </p>
         <pre class="brush: python">
-count += char in "aeiou"
+count = 0
+for char in text.lower():
+    count += char in "aeiou"
+            
+return count
         </pre>
     </div>
 </div>
@@ -69,7 +75,7 @@ count += char in "aeiou"
     </div>
     <div class="answer">
         <p>
-            Il vous suffit de combiner tous les indices précédents et d'envelopper votre code dans une expression de fonction. Il est fortement recommandé d'utiliser des indications de type pour les données d'entrée et de sortie.
+            Il vous suffit d'envelopper votre code dans une expression de fonction. Il est fortement recommandé d'utiliser des indications de type pour les données d'entrée et de sortie.
         </p>
         <p>Voici la solution complète:</p>
         <div class="spoiler">
