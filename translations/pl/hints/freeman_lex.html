@@ -39,8 +39,10 @@ text.lower()
             ... i iterować po nim za pomocą pętli <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a>.
         </p>
         <pre class="brush: python">
+count = 0
 for char in text.lower():
     ...
+return count
         </pre>
     </div>
 </div>
@@ -50,16 +52,20 @@ for char in text.lower():
     </div>
     <div class="answer">
         <p>
-            Proszę sprawdzić, czy <b class="code">char</b> jest samogłoską za pomocą operatora <b class="code">in</b>.
+            Może Pan sprawdzić, czy <b class="code">char</b> jest samogłoską za pomocą operatora <b class="code">in</b>.
         </p>
         <pre class="brush: python">
 char in "aeiou"
         </pre>
         <p>
-            Wyrażenie zwraca wartość logiczną, ale Python może zinterpretować ją jako liczbę całkowitą (0 lub 1). Proszę więc zwiększyć licznik <b class="code">count</b> o tę wartość.
+            Wyrażenie zwraca wartość logiczną, ale Python może zinterpretować ją jako liczbę całkowitą (False == 0 lub True == 1). Proszę więc zwiększyć licznik <b class="code">count</b> o tę wartość wewnątrz pętli.
         </p>
         <pre class="brush: python">
-count += char in "aeiou"
+count = 0
+for char in text.lower():
+    count += char in "aeiou"
+            
+return count
         </pre>
     </div>
 </div>
@@ -69,9 +75,9 @@ count += char in "aeiou"
     </div>
     <div class="answer">
         <p>
-            Wystarczy połączyć wszystkie poprzednie podpowiedzi i zawinąć kod w wyrażenie funkcyjne. Używanie podpowiedzi typu dla danych wejściowych i wyjściowych jest wysoce zalecane.
+            Proszę tylko opakować swój kod w wyrażenie funkcyjne. Zaleca się używanie podpowiedzi typu dla danych wejściowych i wyjściowych.
         </p>
-        <p>Poniżej znajduje się całe rozwiązanie:</p>
+        <p>Oto całe rozwiązanie:</p>
         <div class="spoiler">
         <pre class="brush: python">
 def count_vowels(text: str) -> int:
