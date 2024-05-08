@@ -39,8 +39,10 @@ text.lower()
             ...und iterieren Sie darüber mit <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a> loop.
         </p>
         <pre class="brush: python">
+count = 0
 for char in text.lower():
     ...
+return count
         </pre>
     </div>
 </div>
@@ -50,16 +52,20 @@ for char in text.lower():
     </div>
     <div class="answer">
         <p>
-            Prüfen Sie, ob <b class="code">char</b> ein Vokal ist mit dem <b class="code">in</b> Operator.
+            Sie können überprüfen, ob <b class="code">char</b> ein Vokal ist mit dem <b class="code">in</b> Operator.
         </p>
         <pre class="brush: python">
 char in "aeiou"
         </pre>
         <p>
-            Der Ausdruck gibt einen logischen Wert zurück, aber Python kann ihn als Ganzzahl (0 oder 1) interpretieren. Erhöhen Sie also den Zähler <b class="code">count</b> um diesen Wert.
+            Der Ausdruck gibt einen logischen Wert zurück, aber Python kann ihn als Ganzzahl interpretieren (False == 0 oder True == 1). Erhöhen Sie also den Zähler <b class="code">count</b> innerhalb der Schleife um diesen Wert.
         </p>
         <pre class="brush: python">
-count += char in "aeiou"
+count = 0
+for char in text.lower():
+    count += char in "aeiou"
+            
+return count
         </pre>
     </div>
 </div>
@@ -69,7 +75,7 @@ count += char in "aeiou"
     </div>
     <div class="answer">
         <p>
-            Sie müssen nur alle vorherigen Hinweise zusammenführen und Ihren Code in einen Funktionsausdruck verpacken. Die Verwendung von Typ-Hinweisen für Eingabe- und Ausgabedaten wird dringend empfohlen.
+            Sie müssen Ihren Code nur in einen Funktionsausdruck verpacken. Die Verwendung von Typ-Hinweisen für Eingabe- und Ausgabedaten wird dringend empfohlen.
         </p>
         <p>Hier ist die gesamte Lösung:</p>
         <div class="spoiler">
