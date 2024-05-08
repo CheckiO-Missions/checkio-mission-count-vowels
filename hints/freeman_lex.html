@@ -39,8 +39,10 @@ text.lower()
             ..and iterate over it using <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a> loop.
         </p>
         <pre class="brush: python">
+count = 0
 for char in text.lower():
     ...
+return count
         </pre>
     </div>
 </div>
@@ -50,16 +52,20 @@ for char in text.lower():
     </div>
     <div class="answer">
         <p>
-            Check if <b class="code">char</b> is vowel with <b class="code">in</b> operator.
+            You may check if <b class="code">char</b> is vowel with <b class="code">in</b> operator.
         </p>
         <pre class="brush: python">
 char in "aeiou"
         </pre>
         <p>
-            The expression returns logic value, but Python may interpret it as integer (0 or 1). So increment the counter <b class="code">count</b> by this value.
+            The expression returns logic value, but Python may interpret it as integer (False == 0 or True == 1). So increment the counter <b class="code">count</b> by this value inside loop.
         </p>
         <pre class="brush: python">
-count += char in "aeiou"
+count = 0
+for char in text.lower():
+    count += char in "aeiou"
+            
+return count
         </pre>
     </div>
 </div>
@@ -69,7 +75,7 @@ count += char in "aeiou"
     </div>
     <div class="answer">
         <p>
-            You just need to join all previous hints and wrap your code into function expression. Using type hints for input and output data are highly recommended.
+            You just need to wrap your code into function expression. Using type hints for input and output data are highly recommended.
         </p>
         <p>Here is the whole solution:</p>
         <div class="spoiler">
