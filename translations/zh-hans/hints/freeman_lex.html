@@ -39,8 +39,10 @@ text.lower()
             ...并使用<a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a> 循环遍历它。
         </p>
         <pre class="brush: python">
+count = 0
 for char in text.lower():
     ...
+return count
         </pre>
     </div>
 </div>
@@ -50,16 +52,20 @@ for char in text.lower():
     </div>
     <div class="answer">
         <p>
-            使用<b class="code">in</b> 运算符检查<b class="code">char</b> 是否为元音。
+            您可以使用<b class="code">in</b> 运算符检查<b class="code">char</b> 是否为元音。
         </p>
         <pre class="brush: python">
 char in "aeiou"
         </pre>
         <p>
-            表达式返回逻辑值，但 Python 可能将其解释为整数（0 或 1）。因此，计数器<b class="code">count</b> 将以此值递增。
+            表达式返回逻辑值，但 Python 可能将其解释为整数（False == 0 或 True ==1）。因此，在循环中将计数器<b class="code">count</b> 按此值递增。
         </p>
         <pre class="brush: python">
-count += char in "aeiou"
+count = 0
+for char in text.lower():
+    count += char in "aeiou"
+            
+return count
         </pre>
     </div>
 </div>
@@ -69,7 +75,7 @@ count += char in "aeiou"
     </div>
     <div class="answer">
         <p>
-            您只需将之前所有的提示连接起来，然后将代码封装成函数表达式即可。强烈建议对输入和输出数据使用类型提示。
+            你只需将代码封装成函数表达式。强烈建议对输入和输出数据使用类型提示。
         </p>
         <p>以下是整个解决方案：</p>
         <div class="spoiler">
@@ -87,7 +93,7 @@ def count_vowels(text: str) -> int:
 </div>
 <div class="question-answer">
     <div class="question">
-        向我展示更多解决方案！<br />
+        告诉我更多解决方案！<br />
         因为我想成为一个真正的 🥇 Python Ninnjaa！
     </div>
     <div class="answer">
